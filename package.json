@@ -1,0 +1,41 @@
+{
+  "name": "@hpcc-js/d3-bullet",
+  "version": "1.0.0",
+  "description": "d3 v4 bullet chart.",
+  "keywords": [
+    "d3",
+    "d3-module",
+    "bullet"
+  ],
+  "homepage": "https://github.com/GordonSmith/d3-bullet",
+  "license": "BSD-3-Clause",
+  "main": "build/d3-bullet.js",
+  "module": "index",
+  "jsnext:main": "index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GordonSmith/d3-bullet.git"
+  },
+  "scripts": {
+    "pretest": "rimraf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -g d3-array:d3,d3-axis:d3,d3-scale:d3,d3-selection:d3,d3-timer:d3,d3-transition:d3 -n d3 -o build/d3-bullet.js -- index.js",
+    "test": "tape 'test/**/*-test.js' && eslint index.js src",
+    "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-bullet.js -c -m -o build/d3-bullet.min.js",
+    "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../d3-bullet/build/d3-bullet.js d3-bullet.v1.0.js && cp ../d3-bullet/build/d3-bullet.min.js d3-bullet.v1.0.min.js && git add d3-bullet.v1.0.js d3-bullet.v1.0.min.js && git commit -m \"d3-bullet ${npm_package_version}\" && git push && cd - && zip -j build/d3-bullet.zip -- LICENSE README.md build/d3-bullet.js build/d3-bullet.min.js"
+  },
+  "dependencies": {
+    "d3-array": "1",
+    "d3-axis": "1",
+    "d3-scale": "1",
+    "d3-selection": "1",
+    "d3-timer": "1",
+    "d3-transition": "1"
+  },
+  "devDependencies": {
+    "eslint": "3",
+    "package-preamble": "0.0",
+    "rollup": "0.41",
+    "rimraf": "^2.6.1",
+    "tape": "4",
+    "uglify-js": "2"
+  }
+}
