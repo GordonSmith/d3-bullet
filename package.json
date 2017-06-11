@@ -1,6 +1,6 @@
 {
   "name": "@hpcc-js/d3-bullet",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "d3 v4 bullet chart.",
   "keywords": [
     "d3",
@@ -8,6 +8,9 @@
     "bullet"
   ],
   "homepage": "https://github.com/GordonSmith/d3-bullet",
+  "author": {
+    "name": "Jason Davis"
+  },
   "license": "BSD-3-Clause",
   "main": "build/d3-bullet.js",
   "module": "index",
@@ -32,7 +35,7 @@
   },
   "devDependencies": {
     "eslint": "3",
-    "package-preamble": "0.0",
+    "package-preamble": "^0.1.0",
     "rollup": "0.41",
     "rimraf": "^2.6.1",
     "tape": "4",
