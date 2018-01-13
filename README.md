@@ -4,7 +4,7 @@ d3 v4 port of https://github.com/d3/d3-plugins/tree/master/bullet
 
 ## Installing
 
-`npm install @hpcc-js/d3-bullet`.
+`npm install d3v4-bullet`.
 
 ## API Reference
 
