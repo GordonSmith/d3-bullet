@@ -1,6 +1,6 @@
 {
   "name": "d3v4-bullet",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "d3 v4 bullet chart.",
   "keywords": [
     "d3",
@@ -20,10 +20,10 @@
     "url": "https://github.com/GordonSmith/d3-bullet.git"
   },
   "scripts": {
-    "pretest": "rimraf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -g d3-array:d3,d3-axis:d3,d3-scale:d3,d3-selection:d3,d3-timer:d3,d3-transition:d3 -n d3 -o build/d3-bullet.js -- index.js",
+    "pretest": "rimraf build && mkdir build && rollup -f umd -g d3-array:d3,d3-axis:d3,d3-scale:d3,d3-selection:d3,d3-timer:d3,d3-transition:d3 -n d3 -o build/d3-bullet.js -- index.js",
     "test": "tape 'test/**/*-test.js' && eslint index.js src",
     "clean": "rimraf ./build",
-    "build": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-bullet.js -c -m -o build/d3-bullet.min.js"
+    "build": "npm run test && uglifyjs build/d3-bullet.js -c -m -o build/d3-bullet.min.js"
   },
   "dependencies": {
     "d3-array": "1",
