@@ -116,7 +116,7 @@ export default function () {
         if (!arguments.length) return orient;
         orient = _ + "";
         reverse = orient === "right" || orient === "bottom";
-        xAxis.orient((vertical = orient === "top" || orient === "bottom") ? "left" : "bottom");
+        xAxis.orient((vertical = orient === "top" || orient === "bottom") ? "left" : "bottom"); // eslint-disable-line
         return bulvar;
     };
 
